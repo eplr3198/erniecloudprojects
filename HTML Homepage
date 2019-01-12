@@ -1,0 +1,105 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+</style>
+</head>
+<body>
+
+<style>
+body {
+  background-image: url("http://s3.amazonaws.com/erniecloudprojects.com/alpines.jpg");
+  background-size: 100% 100%;
+}
+html {
+    height: 100%
+}
+</style>
+
+
+<button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
+<button class="tablink" onclick="openPage('Alexa Skill', this, 'blue')" id="defaultOpen">Alexa Skill</button>
+<button class="tablink" onclick="openPage('Project 2', this, 'blue')">Project 2</button>
+<button class="tablink" onclick="openPage('Project 3', this, 'orange')">Project 3</button>
+
+<div id="Home" class="tabcontent">
+  <h3>Home</h3>
+  <p>Click on each tab to reveal a project</p>
+</div>
+
+<div id="Alexa Skill" class="tabcontent">
+
+  <h3>Alexa Skill</h3>
+  <p>
+  <th>
+			<form action="http://s3.amazonaws.com/erniecloudprojects.com/Text_to_voice.html">
+			<input type="submit" value="Text to voice" id="sayButton" class="buttons">
+			</form>
+			</th>
+  </p> 
+</div>
+
+<div id="Project 2" class="tabcontent">
+  <h3>Project 2</h3>
+  <p>Coming soon...</p>
+</div>
+
+<div id="Project 3" class="tabcontent">
+  <h3>Project 3</h3>
+  <p>Coming soon...</p>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
